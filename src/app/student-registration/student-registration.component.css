@@ -1,0 +1,51 @@
+form{
+    width:500px;
+    display: inline-block;
+}
+.container{
+width: 500px;
+height: auto;
+}
+body{
+    text-align: center;
+    background-color:lightgray;
+    height: auto;
+    }
+
+    label{
+        width: 150px;
+        display: inline-block;
+        margin: 0.1;
+        text-align: left;
+        font-size: 15px;
+        font-weight: lighter;
+        height: auto;
+    }
+    label.form-label{
+        text-align:left;
+                width: 100px;
+                    display: inline-block;
+                    margin: 0.2cm;
+        
+            font: size 8px;
+        
+            font-weight: bold
+        
+        
+    }
+    input {
+        width: 55%;
+        /* height: 100%; */
+        padding: 6px 10px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+      select{
+          width:55%;
+          margin:0.2cm;
+          height:0.7cm;
+      }
+
+    
+
+   

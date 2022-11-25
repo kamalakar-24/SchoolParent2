@@ -1,0 +1,26 @@
+<head>  
+      
+    <link rel="stylesheet" href="circularget.component.css" type="text/css">
+</head>
+
+<button type="button" class="btn btn-primary" (click)="getCircular()">Get</button>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>notificationId</th>
+            <th>informationText</th>
+            <th>notificationPostedBy</th>
+            <th>notificationDate</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Circular of Circulars">
+            <td>{{Circular.notificationId}}</td>
+            <td>{{Circular.informationText}}</td>
+            <td>{{Circular.notificationPostedBy}}</td>
+            <td>{{Circular.notificationDate}}</td>
+
+        </tr>
+    </tbody>
+</table>

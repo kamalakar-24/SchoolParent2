@@ -1,0 +1,221 @@
+<head>  
+      <link rel="stylesheet" href="student-registration.component.css" type="text/css">
+</head>
+
+<body>   
+    <form [formGroup]="save"  class="border p-3 rounded-3">
+        <div class= "container">
+            <div class="row g-0">
+                <div class="row">
+                    <div class= "col text-center p-8 mb-4 bg-light">
+                        <h2>Student Registration Form</h2>
+                        <!-- <span class="fs-1">Student Registration Form</span> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <label for ="parentName" class="form-label">Parent Name </label>
+                <input type="text" class="form -control" placeholder="Enter Parent Name" id="parentName" formControlName="parentName" pattern="[a-z A-Z]{0,}" >
+                <div class="form-text text-danger"
+                *ngIf="parentName.errors?.['required'] &&(parentName.touched || parentName.dirty)">
+                *required
+            </div>
+                        
+            <div class="form-text form-danger" *ngIf="parentName.errors?.['pattern']&&(parentName.touched || parentName.dirty)">
+                *Parent Name should be Alphabats and spaces only
+            </div>
+            </div>
+
+            <div class="col mb-3">
+                <label for ="studentName" class="form-label">Student Name</label>
+                <input type="text" class="form -control" placeholder="Enter Student Name" id="studentName" formControlName="studentName" pattern="[a-z A-Z]{0,}" >
+                <div class="form-text text-danger"
+                *ngIf="studentName.errors?.['required'] &&(studentName.touched || studentName.dirty)">
+                *required
+            </div>
+            
+            <div class="form-text form-danger" *ngIf="studentName.errors?.['pattern']&&(studentName.touched || studentName.dirty)">
+                *Student Name should be Alphabats and spaces only
+            </div>
+            </div>
+
+            <div class="col mb-3">
+                <label for ="country" class="form-label">Country</label>
+                <select  class="form -select" placeholder="Choose Country Name" id="country" formControlName="country" >
+                    <option value="India">India</option>
+                </select>
+                <div class="form-text text-danger"
+                *ngIf="country.errors?.['required'] &&(country.touched || country.dirty)">
+                *required
+            </div>
+            
+            <div class="form-text form-danger" *ngIf="country.errors?.['pattern']&&(country.touched || country.dirty)">
+                <!-- *Country Name is required -->
+            </div>
+             </div>
+
+             <div class="col mb-3">
+                <label for ="state" class="form-label"  style="max-width:50%;"> State</label>
+                <select  class="form -select" placeholder="Choose state Name" id="state" formControlName="state" >
+                <option value="Telangana">Telangana</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Tamilnadu">Tamilnadu</option>
+                <option value="Maharasthra">Maharasthra</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Dehli">Dehli</option>
+                </select>
+                <div class="form-text text-danger"
+                *ngIf="state.errors?.['required'] &&(state.touched || state.dirty)">
+                *required
+            </div>
+            <div class="form-text form-danger" *ngIf="state.errors?.['pattern']&&(state.touched || state.dirty)">
+                <!-- *Country Name is required -->
+            </div>
+            </div> 
+            
+
+            <div class="col mb-3">
+                <label for ="city" class="form-label" > City</label>
+                <input type="text"  class="form -select" placeholder="Choose City Name" id="city" formControlName="city" pattern="[a-zA-Z]{0,}" >
+                <div class="form-text text-danger"
+                *ngIf="city.errors?.['required'] &&(city.touched || city.dirty)">
+                *required
+            </div>
+            
+            <div class="form-text form-danger" *ngIf="city.errors?.['pattern']&&(city.touched || city.dirty)">
+                *City should be Alphabets only
+            </div>
+            </div> 
+
+            <div class="col mb-3">
+                <label for ="address" class="form-label">Address</label>
+                <input type="text" class="form -control" placeholder="Enter address " id="address" formControlName="address">
+                <div class="form-text text-danger"
+                *ngIf="address.errors?.['required'] &&(address.touched || address.dirty)">
+                *required
+            </div>
+        
+            <div class="form-text form-danger" *ngIf="address.errors?.['pattern']&&(address.touched || address.dirty)">
+               
+            </div>
+            </div>
+
+            <div class="col mb-3">
+                <label for ="studentAge" class="form-label">StudentAge</label>
+                <input type="text" class="form -control" placeholder="Enter StudentAge " id="studentAge" formControlName="studentAge" pattern="[0-9]{0,50}">
+                <div class="form-text text-danger"
+                *ngIf="studentAge.errors?.['required'] &&(studentAge.touched || studentAge.dirty)">
+                *required
+            </div>
+        
+            <div class="form-text form-danger" *ngIf="studentAge.errors?.['pattern']&&(studentAge.touched || studentAge.dirty)">
+                *StudentAge should be numbers
+            </div>
+            </div>
+
+            <div class="col mb-3">
+                <label for ="registrationDate" class="form-label">Registration Date</label>
+                <input type="date" class="form -control" placeholder="Enter RegistrationDate " id="registrationDate" formControlName="registrationDate">
+                <div class="form-text text-danger"
+                *ngIf="registrationDate.errors?.['required'] &&(registrationDate.touched || registrationDate.dirty)">
+                *required
+            </div>
+            
+            <div class="form-text form-danger" *ngIf="registrationDate.errors?.['pattern']&&(registrationDate.touched || registrationDate.dirty)">
+                <!-- *RegistrationDate is required -->
+            </div>
+            </div>
+
+            <div class="col mb-3">
+                <label for ="zipCode" class="form-label">ZipCode</label>
+                <input type="text" class="form -control" placeholder="Enter ZipCode " id="zipCode" formControlName="zipCode" pattern="[0-9].{5,5}">
+                <div class="form-text text-danger"
+                *ngIf="zipCode.errors?.['required'] &&(zipCode.touched || zipCode.dirty)">
+                *required
+            </div>
+            
+            <div class="form-text form-danger" *ngIf="zipCode.errors?.['pattern']&&(zipCode.touched || zipCode.dirty)">
+                *zipCode should be numbers and lenth should be 6
+            </div>
+            </div>
+
+            <div class="col mb-3">
+                <label for ="emailAddress" class="form-label">Email</label>
+                <input type="email" class="form -control" placeholder="Enter Email " id="emailAddress" formControlName="emailAddress" pattern="[0-9a-zA-Z.@].{0,}">
+                <div class="form-text text-danger"
+                *ngIf="emailAddress.errors?.['required'] &&(emailAddress.touched || emailAddress.dirty)">
+                *required
+            </div>
+            
+            <div class="form-text form-danger" *ngIf="emailAddress.errors?.['email']&&(emailAddress.touched || emailAddress.dirty)">
+                *Email should be . and @ symbols
+            </div>
+            </div>
+
+            <div class="col mb-3">
+                <label for ="primaryContactPerson" class="form-label">Primary Contact Person</label>
+                <input type="text" class="form -control" placeholder="Enter Primary Contact Person " id="primaryContactPerson" formControlName="primaryContactPerson" pattern="[a-z A-Z]{0,50}">
+                <div class="form-text text-danger"
+                *ngIf= "primaryContactPerson.errors?.['required'] &&(primaryContactPerson.touched || primaryContactPerson.dirty)">
+                *required
+            </div>
+            
+            <div class="form-text form-danger" *ngIf="primaryContactPerson.errors?.['pattern']&&(primaryContactPerson.touched || primaryContactPerson.dirty)">
+                *Only Alphabats and Spaces allowed
+            </div>
+            </div>
+
+            <div class="col mb-3">
+                <label for ="primaryContactPersonMobile" class="form-label">Primary Contact Person Mobile</label>
+                <input type="text" class="form -control" placeholder="Enter Primary Contact Person Mobile " id="primaryContactPersonMobile" formControlName="primaryContactPersonMobile" pattern="[0-9].{9,9}">
+                <div class="form-text text-danger"
+                *ngIf= "primaryContactPersonMobile.errors?.['required'] &&(primaryContactPersonMobile.touched || primaryContactPersonMobile.dirty)">
+                *required
+            </div>
+            
+            <div class="form-text form-danger" *ngIf="primaryContactPersonMobile.errors?.['pattern']&&(primaryContactPersonMobile.touched || primaryContactPersonMobile.dirty)">
+                *length should be 10 and only numbers
+            </div>
+            </div>
+
+            
+            <div class="col mb-3">
+                <label for ="secondaryContactPerson" class="form-label">Secondary Contact Person</label>
+                <input type="text" class="form -control" placeholder="Enter Secondary Contact Person " id="secondaryContactPerson" formControlName="secondaryContactPerson" pattern="[a-z A-Z]{0,50}">
+                <div class="form-text text-danger"
+                *ngIf= "secondaryContactPerson.errors?.['required'] &&(secondaryContactPerson.touched || secondaryContactPerson.dirty)">
+                *required
+            </div>
+            
+            <div class="form-text form-danger" *ngIf="secondaryContactPerson.errors?.['pattern']&&(secondaryContactPerson.touched || secondaryContactPerson.dirty)">
+                *Only Alphabats and Spaces allowed
+            </div>
+            </div>
+
+            <div class="col mb-3">
+                <label for ="secondaryContactPersonMobile" class="form-label">Secondary Contact Person Mobile</label>
+                <input type="text" class="form -control" placeholder="Enter Secondary Contact Person Mobile" id="secondaryContactPersonMobile" formControlName="secondaryContactPersonMobile" pattern="[0-9].{9,9}">
+                <div class="form-text text-danger"
+                *ngIf= "secondaryContactPersonMobile.errors?.['required'] &&(secondaryContactPersonMobile.touched || secondaryContactPersonMobile.dirty)">
+                *required
+            </div>
+            
+            <div class="form-text text-danger" *ngIf="secondaryContactPersonMobile.errors?.['pattern']&&(secondaryContactPersonMobile.touched || secondaryContactPersonMobile.dirty)">
+                *length should be 10 and only numbers
+            </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6 offset-3">
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-secondary" (click)="student()">Save</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+</body>   
+
+

@@ -1,0 +1,68 @@
+<head>  
+      <link rel="stylesheet" href="staffcircular.component.css" type="text/css">
+</head>
+
+<body>   
+    <form [formGroup]="staff"  class="border p-3 rounded-3">
+        <div class= "container">
+            <div class="row g-0">
+                <div class="row">
+                    <div class= "col text-center p-8 mb-4 bg-light">
+                        <h2>Staff Circular</h2>
+                        <!-- <span class="fs-1">Student Registration Form</span> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-3">
+                <label for ="informationText" class="form-label">Information Text</label>
+                <input type="text" class="form -control" placeholder="Enter Information Text" id="informationText" formControlName="informationText" pattern="[a-zA-Z 0-9 &@-/]{0,}">
+                <div class="form-text text-danger"
+                *ngIf="informationText.errors?.['required'] &&(informationText.touched || informationText.dirty)">
+                *required
+            </div>
+            <div class="form-text form-danger" *ngIf="informationText.errors?.['pattern']&&(informationText.touched || informationText.dirty)">
+                <!-- *Parent Name is required -->
+            </div>
+            </div>
+
+            <div class="col mb-3">
+                <label for ="notificationPostedBy" class="form-label">Notification Posted By</label>
+                <input type="text" class="form -control" placeholder="Enter Notification Posted By" id="notificationPostedBy" formControlName="notificationPostedBy" pattern="[a-z A-Z]{0,}" >
+                <div class="form-text text-danger"
+                *ngIf="notificationPostedBy.errors?.['required'] &&(notificationPostedBy.touched || notificationPostedBy.dirty)">
+                *required
+            </div>
+            <div class="form-text form-danger" *ngIf="notificationPostedBy.errors?.['pattern']&&(notificationPostedBy.touched || notificationPostedBy.dirty)">
+                *Only Alphabets and spaces allowed
+            </div>
+            </div>
+
+            <div class="col mb-3">
+                <label for ="notificationDate" class="form-label">Notification Date </label>
+                <input type="date" class="form -control" placeholder="Enter Notification Date " id="notificationDate" formControlName="notificationDate" >
+                <div class="form-text text-danger"
+                *ngIf="notificationDate.errors?.['required'] &&(notificationDate.touched || notificationDate.dirty)">
+                *required
+            </div>
+            <div class="form-text form-danger" *ngIf="notificationDate.errors?.['pattern']&&(notificationDate.touched || notificationDate.dirty)">
+                <!-- *Parent Name is required -->
+            </div>
+            </div>
+
+        
+
+            <div class="row">
+                <div class="col-6 offset-3">
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-secondary" (click)="save()">Save</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+</body>   
+
+

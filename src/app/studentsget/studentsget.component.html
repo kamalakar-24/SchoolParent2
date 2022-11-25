@@ -1,0 +1,125 @@
+<head>  
+      <link rel="stylesheet" href="studentsget.component.css" type="text/css">
+</head>
+
+<button type="button" class="btn btn-secondary" (click)="getStudents()">Get</button>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>studentRegistrationId</th>
+            <th>parentName</th>
+            <th>studentName</th>
+            <th>address</th>
+            <th>country</th>
+            <th>city</th>
+            <th>studentAge</th>
+            <th>state</th>
+            <th>registrationDate</th>
+            <th>zipCode</th>
+            <th>emailAddress</th>
+            <th>primaryContactPerson</th>
+            <th>primaryContactPersonMobile</th>
+            <th>secondaryContactPerson</th>
+            <th>secondaryContactPersonMobile</th>
+            <th>Status</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students">
+            <td>{{student.studentRegistrationId}}</td>
+            <td>{{student.parentName}}</td>
+            <td>{{student.studentName}}</td>
+            <td>{{student.address}}</td>
+            <td>{{student.country}}</td>
+            <td>{{student.city}}</td>
+            <td>{{student.studentAge}}</td>
+            <td>{{student.state}}</td>
+            <td>{{student.registrationDate}}</td>
+            <td>{{student.zipCode}}</td>
+            <td>{{student.emailAddress}}</td>
+            <td>{{student.primaryContactPerson}}</td>
+            <td>{{student.primaryContactPersonMobile}}</td>
+            <td>{{student.secondaryContactPerson}}</td>
+            <td>{{student.secondaryContactPersonMobile}}</td>
+            <td>{{student.status}}</td>
+            <td>{{student.description}}</td>
+            <td>{{student.description}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<head>  
+    <link rel="stylesheet" href="studentsget.component.css" type="text/css">
+</head>
+
+<body>   
+  <form [formGroup]="aprroval"  class="border p-3 rounded-3">
+      <div class= "container">
+          <div class="row g-0">
+              <div class="row">
+                  <div class= "col text-center p-8 mb-4 bg-light">
+                      <h2> Approval Form</h2>
+                      <!-- <span class="fs-1">Student Registration Form</span> -->
+                  </div>
+              </div>
+          </div>
+
+          <div class="col mb-3">
+              <label for ="studentRegistrationId" class="form-label">Student Registration Id </label>
+              <input type="text" class="form -control" placeholder="Enter Student Registration Id " id="studentRegistrationId" formControlName="studentRegistrationId" pattern="[0-9].{9,9}" >
+              <div class="form-text text-danger"
+              *ngIf="studentRegistrationId.errors?.['required'] &&(studentRegistrationId.touched || studentRegistrationId.dirty)">
+              *required
+          </div>
+                    
+          <div class="form-text form-danger" *ngIf="studentRegistrationId.errors?.['pattern']&&(studentRegistrationId.touched || studentRegistrationId.dirty)">
+              *Student Id Should be numeric and Exist Id only
+          </div>
+          </div>
+
+
+          <div class="col mb-3">
+            <label for ="status" class="form-label"  style="max-width:50%;"> Status</label>
+            <select  class="form -select" placeholder="Choose state Name" id="status" formControlName="status" >
+            <option value="Approve">Approve</option>
+            <option value=" Reject"> Reject</option>
+           
+            </select>
+            <div class="form-text text-danger"
+            *ngIf="status.errors?.['required'] &&(status.touched || status.dirty)">
+            *required
+        </div>
+        <div class="form-text form-danger" *ngIf="status.errors?.['pattern']&&(status.touched || status.dirty)">
+            <!-- *Country Name is required -->
+        </div>
+        </div> 
+
+          <div class="col mb-3">
+              <label for ="description" class="form-label">Description</label>
+              <input type="text" class="form -control" placeholder="Enter Description" id="description" formControlName="description" pattern="[a-z A-z]{0,}" >
+              <div class="form-text text-danger"
+              *ngIf="description.errors?.['required'] &&(description.touched || description.dirty)">
+              *required
+          </div>
+          
+          <div class="form-text form-danger" *ngIf="description.errors?.['pattern']&&(description.touched || description.dirty)">
+              *Student Name should be Alphabets and spaces only
+          </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6 offset-3">
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-secondary" (click)="getApproval()">Save</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+</body>    
+
+        
