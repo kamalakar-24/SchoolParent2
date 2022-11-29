@@ -20,11 +20,29 @@ export class StudentRegistrationComponent implements OnInit {
     registrationDate:new FormControl("",[Validators.required]),
     zipCode: new FormControl("",[Validators.required]),
     emailAddress:new FormControl("",[Validators.required,Validators.email]),
+    password:new FormControl("",[Validators.required]),
     primaryContactPerson:new FormControl("",[Validators.required]),
     primaryContactPersonMobile:new FormControl("",[Validators.required]),
     secondaryContactPerson:new FormControl("",[Validators.required]),
     secondaryContactPersonMobile:new FormControl("",[Validators.required]),
+  });
 
+  add = new FormGroup({
+    parentName: new FormControl("",[Validators.required]),
+    studentName:new FormControl("",[Validators.required]),
+    country:new FormControl("",[Validators.required]),
+    state:new FormControl("",[Validators.required]),
+    city:new FormControl("",[Validators.required]),
+    address:new FormControl("",[Validators.required]),
+    studentAge: new FormControl("",[Validators.required]),
+    registrationDate:new FormControl("",[Validators.required]),
+    zipCode: new FormControl("",[Validators.required]),
+    emailAddress:new FormControl("",[Validators.required,Validators.email]),
+    password:new FormControl("",[Validators.required]),
+    primaryContactPerson:new FormControl("",[Validators.required]),
+    primaryContactPersonMobile:new FormControl("",[Validators.required]),
+    secondaryContactPerson:new FormControl("",[Validators.required]),
+    secondaryContactPersonMobile:new FormControl("",[Validators.required]),
   });
 
   constructor(private commonservice:CommonserviceService) { }
@@ -42,6 +60,20 @@ export class StudentRegistrationComponent implements OnInit {
       }
     )
   }
+
+  Add(){
+   
+    const observable : Observable<any> = this.commonservice.StudentRegistration(this.add.value);
+  observable.subscribe(
+    (responce:any)=>{
+      console.log(Response)
+      alert("Submitted")
+    },
+    function(){
+      alert("Something went wrong please try again")
+    }
+  )
+}
   ngOnInit(): void {
   }
   get parentName(): FormControl{
@@ -54,7 +86,7 @@ export class StudentRegistrationComponent implements OnInit {
     return this.save.get("country") as FormControl;
   }
   get state(): FormControl{
-    return this.save.get("country") as FormControl;
+    return this.save.get("state") as FormControl;
   }
   get city(): FormControl{
     return this.save.get("city") as FormControl;
@@ -73,6 +105,9 @@ export class StudentRegistrationComponent implements OnInit {
   }
   get emailAddress(): FormControl{
     return this.save.get("emailAddress") as FormControl;
+  }
+  get password(): FormControl{
+    return this.save.get("password") as FormControl;
   }
   get primaryContactPerson(): FormControl{
     return this.save.get("primaryContactPerson") as FormControl;

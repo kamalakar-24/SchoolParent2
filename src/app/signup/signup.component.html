@@ -1,0 +1,70 @@
+<head>  
+      <link rel="stylesheet" href="signup.component.css" type="text/css">
+</head>
+
+<body>   
+    <form [formGroup]="staff"  class="border p-3 rounded-3">
+        <div class= "container">
+            <div class="row g-0">
+                <div class="row">
+                    <div class= "col text-center p-8 mb-4 bg-light">
+                        <h2>SignUp Page</h2>
+                        <!-- <span class="fs-1">Student Registration Form</span> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-3">
+                <label for ="staffName" class="form-label">Staff Name </label>
+                <input type="text" class="form -control" placeholder="Enter Staff Name" id="staffName" formControlName="staffName" pattern="[a-z A-Z]{0,}" >
+                <div class="form-text text-danger"
+                *ngIf="staffName.errors?.['required'] &&(staffName.touched || staffName.dirty)">
+                *required
+            </div>
+                        
+            <div class="form-text form-danger" *ngIf="staffName.errors?.['pattern']&&(staffName.touched || staffName.dirty)">
+                *Staff Name should be Alphabats and spaces only
+            </div>
+            </div>
+
+            <div class="col mb-3">
+                <label for ="email" class="form-label"> Email </label>
+                <input type="text" class="form -control" placeholder="Enter Email" id="email" formControlName="email" pattern="[a-z A-Z 0-9@.]{0,}" >
+                <div class="form-text text-danger"
+                *ngIf="email.errors?.['required'] &&(email.touched || email.dirty)">
+                *required
+            </div>
+                        
+            <div class="form-text form-danger" *ngIf="email.errors?.['email']&&(email.touched || email.dirty)">
+                *Email Name should be @and . symbols only
+            </div>
+            </div>
+
+            <div class="col mb-3">
+                <label for ="password" class="form-label"> Password </label>
+                <input type="password" class="form -control" placeholder="Enter Password" id="password" formControlName="password" pattern="[a-z A-Z 0-9@.]{0,}" >
+                <div class="form-text text-danger"
+                *ngIf="password.errors?.['required'] &&(password.touched || password.dirty)">
+                *required
+            </div>
+                        
+            <div class="form-text form-danger" *ngIf="password.errors?.['pattern']&&(password.touched || password.dirty)">
+                
+            </div>
+            </div>
+
+           
+            <div class="row">
+                <div class="col-6 offset-3">
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-secondary" (click)="save()">Save</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+</body>   
+
+
+

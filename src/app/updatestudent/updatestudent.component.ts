@@ -36,9 +36,9 @@ export class UpdatestudentComponent implements OnInit {
       console.log(Response)
       alert("Updated Successfully")
     },
-    function(){
-      alert("Something went wrong please try again")
-    }
+    // function(){
+    //   alert("Something went wrong please try again")
+    // }
   )
 }
 

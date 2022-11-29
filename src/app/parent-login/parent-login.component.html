@@ -1,0 +1,60 @@
+<head>  
+      <link rel="stylesheet" href="parent-login.component.css" type="text/css">
+</head>
+
+<body>   
+    <form [formGroup]="student"  class="border p-3 rounded-3">
+        <div class= "container">
+            <div class="row g-0">
+                <div class="row">
+                    <div class= "col text-center p-8 mb-4 bg-light">
+                        <h2>SignIn Page</h2>
+                        <!-- <span class="fs-1">Student Registration Form</span> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-3">
+                <label for ="emailAddress" class="form-label"> Email </label>
+                <input type="text" class="form -control" placeholder="Enter Email" id="emailAddress" formControlName="emailAddress" pattern="[a-z A-Z 0-9@.]{0,}" >
+                <div class="form-text text-danger"
+                *ngIf="emailAddress.errors?.['required'] &&(emailAddress.touched || emailAddress.dirty)">
+                *required
+            </div>
+                        
+            <div class="form-text form-danger" *ngIf="emailAddress.errors?.['email']&&(emailAddress.touched || emailAddress.dirty)">
+                *Email Name should be @and . symbols only
+            </div>
+            </div>
+
+            <div class="col mb-3">
+                <label for ="password" class="form-label"> Password </label>
+                <input type="password" class="form -control" placeholder="Enter Password" id="password" formControlName="password" pattern="[a-z A-Z 0-9@.]{0,}" >
+                <div class="form-text text-danger"
+                *ngIf="password.errors?.['required'] &&(password.touched || password.dirty)">
+                *required
+            </div>
+                        
+            <div class="form-text form-danger" *ngIf="password.errors?.['pattern']&&(password.touched || password.dirty)">
+                
+            </div>
+            </div>
+
+           
+            <div class="row">
+                <div class="col-6 offset-3">
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-secondary" (click)="save()">Save</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+</body>   
+
+
+
+
+

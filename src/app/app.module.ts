@@ -17,6 +17,11 @@ import { GetcircularComponent } from './getcircular/getcircular.component';
 import { CirculargetComponent } from './circularget/circularget.component';
 import { ParentComponent } from './parent/parent.component';
 import { StaffComponent } from './staff/staff.component';
+import { SignupComponent } from './signup/signup.component';
+import { SigninComponent } from './signin/signin.component';
+import { ParentLoginComponent } from './parent-login/parent-login.component';
+
+
 
 const routes:Route []=[
   { path:'parent/studentRegistration', component: StudentRegistrationComponent},
@@ -26,11 +31,11 @@ const routes:Route []=[
   { path:'home', component: HomeComponent},
   { path:'parent/circularget', component: CirculargetComponent},
   { path:'parent', component: ParentComponent},
-  { path:'staff', component: StaffComponent}
-  
-
-
-  
+  { path:'staff', component: StaffComponent},
+  { path:'staff/Signup', component: SignupComponent},
+  { path:'staff/Signin', component: SigninComponent},
+  { path:'parent/parentLogin', component: ParentLoginComponent},
+ 
 
   ]
 
@@ -47,7 +52,11 @@ const routes:Route []=[
         GetcircularComponent,
         CirculargetComponent,
         ParentComponent,
-        StaffComponent
+        StaffComponent,
+        SignupComponent,
+        SigninComponent,
+        ParentLoginComponent,
+      
   ],
   imports: [
     BrowserModule,

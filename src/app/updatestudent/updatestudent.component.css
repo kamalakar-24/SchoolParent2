@@ -37,5 +37,10 @@ body{
         margin:0.2cm;
         height:0.7cm;
     }
+    button{
+        background-color:lightskyblue;
+        width:100px;
+        height:40px
+      }
 
    

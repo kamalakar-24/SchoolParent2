@@ -31,7 +31,11 @@ body{
         margin: 8px 0;
         box-sizing: border-box;
       }
-
+      button{
+        background-color:lightskyblue;
+        width:100px;
+        height:40px
+      }
     
 
    

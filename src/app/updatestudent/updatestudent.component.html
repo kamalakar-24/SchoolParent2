@@ -16,7 +16,7 @@
 
             <div class="col mb-3">
                 <label for ="studentRegistrationId" class="form-label">Student Registration Id </label>
-                <input type="text" class="form -control" placeholder="Enter Student Registration Id " id="studentRegistrationId" formControlName="studentRegistrationId" pattern="[0-9]{9,9}" >
+                <input type="text" class="form -control" placeholder="Enter Student Registration Id " id="studentRegistrationId" formControlName="studentRegistrationId" pattern="[0-9].{9,9}" >
                 <div class="form-text text-danger"
                 *ngIf="studentRegistrationId.errors?.['required'] &&(studentRegistrationId.touched || studentRegistrationId.dirty)">
                 *required

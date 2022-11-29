@@ -11,7 +11,8 @@ export class GetcircularComponent implements OnInit {
     notificationId:"",
     informationText:"",
     notificationPostedBy:"",
-    notificationDate:""
+    notificationDate:"",
+    acknowledgementDate:""
   }
   Circulars : any[]=[];
   constructor() { }

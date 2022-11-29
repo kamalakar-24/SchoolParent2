@@ -23,6 +23,15 @@ body{
     }
     label.form-label{
         text-align:left;
+                width: 100px;
+                    display: inline-block;
+                    margin: 0.2cm;
+        
+            font: size 8px;
+        
+            font-weight: bold
+        
+        
     }
     input {
         width: 55%;
@@ -31,15 +40,16 @@ body{
         margin: 8px 0;
         box-sizing: border-box;
       }
-
       select{
-        width:55%;
-        margin:0.2cm;
-        height:0.7cm;
-    }
+          width:55%;
+          margin:0.2cm;
+          height:0.7cm;
+      }
 
-    button{
-        background-color:lightskyblue;
+      button{
+        background-color:lightsalmon;
         width:100px;
         height:40px
       }
+
+   

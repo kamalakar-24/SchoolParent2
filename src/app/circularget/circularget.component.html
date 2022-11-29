@@ -4,13 +4,16 @@
 </head>
 
 <button type="button" class="btn btn-primary" (click)="getCircular()">Get</button>
+
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>notificationId</th>
-            <th>informationText</th>
-            <th>notificationPostedBy</th>
-            <th>notificationDate</th>
+            <th>Notification Id</th>
+            <th>Information Text</th>
+            <th>Notification PostedBy</th>
+            <th>Notification Date</th>
+            <th> Button</th>
+            <th>Acknowledgement Date</th>
 
         </tr>
     </thead>
@@ -20,7 +23,8 @@
             <td>{{Circular.informationText}}</td>
             <td>{{Circular.notificationPostedBy}}</td>
             <td>{{Circular.notificationDate}}</td>
-
+            <td><button type="button" class="btn btn-primary" (click)='ACKNOWLEDGEMENT(Circular)'>Acknowledgement</button></td>
+            <td>{{Circular.acknowledgementDate}}</td>
         </tr>
     </tbody>
 </table>
